@@ -61,6 +61,7 @@ body {
   border-radius: 10px;
   background-color: #e9e5e5;
   border-color: var(--rect-color);
+  font-size: large;
 }
 
 #key-equal {
