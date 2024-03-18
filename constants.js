@@ -84,14 +84,14 @@ export const KEYS = [
     },
     {
       text: "=",
-      id: "key-=",
+      id: "key-equal",
       className: "key",
     },
   ],
   [
     {
       text: "*-1",
-      id: "key-*-1",
+      id: "key-minus-one",
       className: "key",
     },
     {
