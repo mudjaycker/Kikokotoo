@@ -1,0 +1,43 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(233, 244, 121);
+}
+
+#rectangle{
+    border: solid 1px;
+    width: 35vw;
+    height: 95vh;
+    position: relative;
+    top: 2.5vh;
+    left: calc(65vw/2);
+}
+
+#screen{
+    border: solid 1px;
+    width: 90%;
+    height: 10%;
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    background: white;
+    text-align: end;
+    font-size: xx-large;
+}
+
+#keyboard{
+    border: solid 1px;
+    width: 90%;
+    height: 70%;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    
+}
+
+@media only screen and (max-width:1000px) {
+    #rectangle{
+        width: 50vw;
+        left: 25vw;
+    }
+}
