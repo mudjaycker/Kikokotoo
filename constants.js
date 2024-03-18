@@ -9,8 +9,8 @@ export const KEYS = [
       className: "key",
     },
     {
-      text: "mod",
-      id: "key-mod",
+      text: "power",
+      id: "key-power",
       className: "key",
     },
     {

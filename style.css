@@ -73,7 +73,7 @@ body {
 }
 
 
-#key-mod,
+#key-power,
 #key-X,
 #key-minus,
 #key-plus,
@@ -83,7 +83,7 @@ body {
 }
 #key-plus,
 #key-minus,
-#key-mod,
+#key-power,
 #key-X {
   background: greenyellow;
   /* border-color: rgb(233, 244, 121); */

@@ -31,7 +31,7 @@ const SPECIAL_KEYS_MAP = {
     operationInput.value = new_val;
   },
   X: () => (operationInput.value += "*"),
-  mod: () => (operationInput.value += "%"),
+  power: () => (operationInput.value += "**"),
   "=": () => calc(operationInput.value),
 };
 
