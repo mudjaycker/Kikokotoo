@@ -1,4 +1,6 @@
 export const KEYBOARD = document.getElementById("keyboard");
+export const operationInput = document.getElementById("operation-input");
+export const operationOutput = document.getElementById("operation-output");
 export const KEYS = [
   [
     {
@@ -7,8 +9,8 @@ export const KEYS = [
       className: "key",
     },
     {
-      text: "%",
-      id: "key-percent",
+      text: "mod",
+      id: "key-mod",
       className: "key",
     },
     {
@@ -90,8 +92,8 @@ export const KEYS = [
   ],
   [
     {
-      text: "*-1",
-      id: "key-minus-one",
+      text: "(",
+      id: "key-lparen",
       className: "key",
     },
     {
@@ -102,6 +104,11 @@ export const KEYS = [
     {
       text: ".",
       id: "key-point",
+      className: "key",
+    },
+    {
+      text: ")",
+      id: "key-rparen",
       className: "key",
     },
     ,
