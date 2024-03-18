@@ -5,12 +5,21 @@ import {
   operationOutput,
 } from "./constants.js";
 
-window.addEventListener("load", createKeyboard)
-
-function fillInput(text) {
-  operationInput.value += text;
-}
-
+window.addEventListener("load", () => {
+  createKeyboard();
+  let keys = document.getElementsByClassName("key");
+  operationInput.addEventListener("keypress", (e) => {
+    if (e.code == "Enter") calc(e.target.value);
+  });
+  for (let key of keys) {
+    key.addEventListener("keypress", (e) => {
+      if (e.code == "Enter") {
+        e.preventDefault();
+        calc(operationInput.value);
+      }
+    });
+  }
+});
 const SPECIAL_KEYS_MAP = {
   C: () => {
     operationInput.value = "";
@@ -23,11 +32,20 @@ const SPECIAL_KEYS_MAP = {
   },
   X: () => (operationInput.value += "*"),
   mod: () => (operationInput.value += "%"),
-  "=": () => {
-    let result = eval(operationInput.value);
-    operationOutput.innerText = "=" + result;
-  },
+  "=": () => calc(operationInput.value),
 };
+
+function calc(text) {
+  try {
+    operationOutput.innerText = "=" + eval(text);
+  } catch (e) {
+    operationOutput.innerText = "Error";
+  }
+}
+
+function fillInput(text) {
+  operationInput.value += text;
+}
 
 function createKey(keyObject) {
   let key = document.createElement("button");
@@ -55,4 +73,3 @@ function createKeyboard() {
     });
   });
 }
-
