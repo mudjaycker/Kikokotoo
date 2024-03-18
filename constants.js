@@ -8,7 +8,7 @@ export const KEYS = [
     },
     {
       text: "%",
-      id: "key-%",
+      id: "key-percent",
       className: "key",
     },
     {
@@ -62,7 +62,7 @@ export const KEYS = [
     },
     {
       text: "+",
-      id: "key-+",
+      id: "key-plus",
       className: "key",
     },
   ],

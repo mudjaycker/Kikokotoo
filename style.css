@@ -1,67 +1,100 @@
-body{
-    padding: 0;
-    margin: 0;
-    background: rgb(233, 244, 121);
+body {
+  padding: 0;
+  margin: 0;
+  background: rgb(233, 244, 121);
 }
 
-#rectangle{
-    border: solid 1px;
-    width: 35vw;
-    height: 95vh;
-    position: relative;
-    top: 2.5vh;
-    left: calc(65vw/2);
+#rectangle {
+  border: solid 1px;
+  width: 35vw;
+  height: 95vh;
+  position: relative;
+  top: 2.5vh;
+  left: calc(65vw / 2);
 }
 
-#screen{
-    border: solid 1px;
-    width: 90%;
-    height: 10%;
-    position: absolute;
-    top: 2%;
-    left: 5%;
-    background: white;
-    text-align: end;
-    font-size: xx-large;
+#screen {
+  border: solid 1px;
+  width: 90%;
+  height: 10%;
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  background: white;
+  text-align: end;
+  font-size: xx-large;
 }
 
-#keyboard{
-    border: solid 1px;
-    width: 90%;
-    height: 70%;
-    position: absolute;
-    top: 25%;
-    left: 2%;
-    display: grid;
-    column-gap: 10px;
-    padding: 3%;
-}
-.keys-row{
-    display: flex;
-    align-items: stretch;
-    flex-flow: row wrap;
-    gap: 10px;
-}
-.key{
-    /* width: 10%; */
-    flex-grow: 1;
-    height: 50%;
+#operation-input {
+  font-size: xx-large;
+  width: 98.5%;
+  /* text-align: right; */
+  border: none;
 }
 
-#key-equal{
-    height: 142%;
-    font-size: xx-large;
-    flex-grow: 0.5;
-    background: rgb(27, 130, 214);
-    color: white;
+#keyboard {
+  border: solid 1px;
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  left: 2%;
+  display: grid;
+  column-gap: 10px;
+  padding: 3%;
 }
-#key-point, #key-0, #key-minus-one{
-    flex-grow: 0.25;
+.keys-row {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.key {
+  flex-grow: 1;
+  height: 50%;
 }
 
-@media only screen and (max-width:1000px) {
-    #rectangle{
-        width: 50vw;
-        left: 25vw;
-    }
+#key-equal {
+  height: 140%;
+  font-size: xx-large;
+  flex-grow: 0.5;
+  background: rgb(27, 130, 214);
+  color: white;
+}
+#key-point,
+#key-0,
+#key-minus-one {
+  flex-grow: 0.25;
+}
+
+#key-percent,
+#key-X,
+#key-minus,
+#key-plus,
+#key-C,
+#key-del {
+  font-size: x-large;
+}
+#key-plus,
+#key-minus,
+#key-C,
+#key-percent,
+#key-X {
+  background: greenyellow;
+  border-color: rgb(233, 244, 121);
+}
+/* #key-minus { */
+/* background: rgb(217, 127, 127); */
+/* color: white; */
+/* } */
+#key-del {
+  background: rgb(233, 82, 82);
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  #rectangle {
+    width: 50vw;
+    left: 25vw;
+  }
 }
