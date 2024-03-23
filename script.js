@@ -4,7 +4,9 @@ import {
   OPERATION_INPUT,
   OPERATION_OUTPUT,
   AUTHORIZED_VALUES,
-  SPECIAL_KEYS_MAP
+  SPECIAL_KEYS_MAP,
+  fillInput,
+  calc,
 } from "./constants.js";
 
 window.addEventListener("load", () => {
@@ -26,20 +28,6 @@ window.addEventListener("load", () => {
     });
   }
 });
-
-function calc(text) {
-  try {
-    let result = eval(text);
-    if(result === undefined) OPERATION_OUTPUT.innerText = 0
-    else OPERATION_OUTPUT.innerText = "=" + result;
-  } catch (e) {
-    OPERATION_OUTPUT.innerText = "Error";
-  }
-}
-
-function fillInput(text) {
-  OPERATION_INPUT.value += text;
-}
 
 function createKey(keyObject) {
   let key = document.createElement("button");

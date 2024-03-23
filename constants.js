@@ -9,10 +9,11 @@ export const SPECIAL_KEYS_MAP = {
   del: () => {
     let deletion = OPERATION_INPUT.value.length - 1;
     let new_val = OPERATION_INPUT.value.substring(0, deletion);
-    OPERATION_INPUT.value = new_val;
+    fillInput(new_val);
   },
-  X: () => (OPERATION_INPUT.value += "*"),
-  power: () => (OPERATION_INPUT.value += "**"),
+  X: () => fillInput("*"),
+  power: () => fillInput("**"),
+  "/": () => fillInput("/"),
   "=": () => calc(OPERATION_INPUT.value),
 };
 export const AUTHORIZED_VALUES = [
@@ -48,6 +49,10 @@ export const KEYS = [
     {
       text: "X",
       id: "key-X",
+    },
+    {
+      text: "/",
+      id: "key-division",
     },
     {
       text: "del",
@@ -128,3 +133,16 @@ export const KEYS = [
     ,
   ],
 ];
+export function fillInput(text) {
+  OPERATION_INPUT.value += text;
+}
+
+export function calc(text) {
+  try {
+    let result = eval(text);
+    if (result === undefined) OPERATION_OUTPUT.innerText = 0;
+    else OPERATION_OUTPUT.innerText = "=" + result;
+  } catch (e) {
+    OPERATION_OUTPUT.innerText = "Error";
+  }
+}
