@@ -4,6 +4,7 @@ import {
   OPERATION_INPUT,
   OPERATION_OUTPUT,
   AUTHORIZED_VALUES,
+  SPECIAL_KEYS_MAP
 } from "./constants.js";
 
 window.addEventListener("load", () => {
@@ -25,20 +26,6 @@ window.addEventListener("load", () => {
     });
   }
 });
-const SPECIAL_KEYS_MAP = {
-  C: () => {
-    OPERATION_INPUT.value = "";
-    OPERATION_OUTPUT.innerText = 0;
-  },
-  del: () => {
-    let deletion = OPERATION_INPUT.value.length - 1;
-    let new_val = OPERATION_INPUT.value.substring(0, deletion);
-    OPERATION_INPUT.value = new_val;
-  },
-  X: () => (OPERATION_INPUT.value += "*"),
-  power: () => (OPERATION_INPUT.value += "**"),
-  "=": () => calc(OPERATION_INPUT.value),
-};
 
 function calc(text) {
   try {
