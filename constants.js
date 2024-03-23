@@ -7,8 +7,8 @@ export const SPECIAL_KEYS_MAP = {
     OPERATION_OUTPUT.innerText = 0;
   },
   del: () => {
-    let deletion = OPERATION_INPUT.value.length - 1;
-    let new_val = OPERATION_INPUT.value.substring(0, deletion);
+    let before_last = OPERATION_INPUT.value.length - 1;
+    let new_val = OPERATION_INPUT.value.substring(0, before_last);
     OPERATION_INPUT.value = new_val;
   },
   X: () => fillInput("*"),
