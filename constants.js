@@ -9,7 +9,7 @@ export const SPECIAL_KEYS_MAP = {
   del: () => {
     let deletion = OPERATION_INPUT.value.length - 1;
     let new_val = OPERATION_INPUT.value.substring(0, deletion);
-    fillInput(new_val);
+    OPERATION_INPUT.value = new_val;
   },
   X: () => fillInput("*"),
   power: () => fillInput("**"),
