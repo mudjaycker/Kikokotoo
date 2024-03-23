@@ -43,7 +43,7 @@ function fillInput(text) {
 
 function createKey(keyObject) {
   let key = document.createElement("button");
-  key.classList = keyObject.className;
+  key.classList = "key";
   key.id = keyObject.id;
   key.innerText = keyObject.text;
   if (!Object.keys(SPECIAL_KEYS_MAP).includes(keyObject.text))
