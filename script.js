@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
   for (let key of keys) {
     key.addEventListener("keypress", (e) => {
       if (e.key == "Enter") {
-        // e.preventDefault();
+        e.preventDefault();
         calc(OPERATION_INPUT.value);
       }
     });
