@@ -77,7 +77,8 @@ body {
 #key-minus,
 #key-plus,
 #key-C,
-#key-del {
+#key-del,
+#key-division {
   font-size: x-large;
 }
 #key-plus,
