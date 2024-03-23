@@ -1,6 +1,26 @@
 export const KEYBOARD = document.getElementById("keyboard");
-export const operationInput = document.getElementById("operation-input");
-export const operationOutput = document.getElementById("operation-output");
+export const OPERATION_INPUT= document.getElementById("operation-input");
+export const OPERATION_OUTPUT = document.getElementById("operation-output");
+export const AUTHORIZED_VALUES = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "+",
+  "-",
+  "*",
+  "/",
+  "Enter",
+  "(",
+  ")",
+  ".",
+];
 export const KEYS = [
   [
     {

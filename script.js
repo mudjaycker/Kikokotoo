@@ -1,50 +1,57 @@
 import {
   KEYBOARD,
   KEYS,
-  operationInput,
-  operationOutput,
+  OPERATION_INPUT,
+  OPERATION_OUTPUT,
+  AUTHORIZED_VALUES,
 } from "./constants.js";
 
 window.addEventListener("load", () => {
   createKeyboard();
   let keys = document.getElementsByClassName("key");
-  operationInput.addEventListener("keypress", (e) => {
-    if (e.code == "Enter") calc(e.target.value);
+  OPERATION_INPUT.addEventListener("keypress", (e) => {
+    if (AUTHORIZED_VALUES.includes(e.key)) {
+      if (e.key == "Enter") calc(e.target.value);
+    } else {
+      e.preventDefault();
+    }
   });
   for (let key of keys) {
     key.addEventListener("keypress", (e) => {
-      if (e.code == "Enter") {
-        e.preventDefault();
-        calc(operationInput.value);
+      if (e.key == "Enter") {
+        // e.preventDefault();
+        calc(OPERATION_INPUT.value);
       }
     });
   }
 });
 const SPECIAL_KEYS_MAP = {
   C: () => {
-    operationInput.value = "";
-    operationOutput.innerText = 0;
+    OPERATION_INPUT.value = "";
+    OPERATION_OUTPUT.innerText = 0;
   },
   del: () => {
-    let deletion = operationInput.value.length - 1;
-    let new_val = operationInput.value.substring(0, deletion);
-    operationInput.value = new_val;
+    let deletion = OPERATION_INPUT.value.length - 1;
+    let new_val = OPERATION_INPUT.value.substring(0, deletion);
+    OPERATION_INPUT.value = new_val;
   },
-  X: () => (operationInput.value += "*"),
-  power: () => (operationInput.value += "**"),
-  "=": () => calc(operationInput.value),
+  X: () => (OPERATION_INPUT.value += "*"),
+  power: () => (OPERATION_INPUT.value += "**"),
+  "=": () => calc(OPERATION_INPUT.value),
 };
 
 function calc(text) {
   try {
-    operationOutput.innerText = "=" + eval(text);
+    let result = eval(text);
+    if(result === undefined) OPERATION_OUTPUT.innerText = 0
+    else OPERATION_OUTPUT.innerText = "=" + result;
   } catch (e) {
-    operationOutput.innerText = "Error";
+    OPERATION_OUTPUT.innerText = "Error";
   }
 }
 
 function fillInput(text) {
-  operationInput.value += text;
+  OPERATION_INPUT.value += text;
 }
 
 function createKey(keyObject) {
