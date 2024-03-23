@@ -37,6 +37,9 @@ body {
   /* text-align: right; */
   border: none;
 }
+#operation-output{
+  overflow-x: auto;
+}
 
 #keyboard {
   border: solid 1px;
