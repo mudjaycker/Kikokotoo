@@ -22,7 +22,7 @@ body {
 #screen {
   border: solid 1px;
   width: 90%;
-  height: 10%;
+  height: 15%;
   position: absolute;
   top: 2%;
   left: 5%;
@@ -37,7 +37,7 @@ body {
   /* text-align: right; */
   border: none;
 }
-#operation-output{
+#operation-output {
   overflow-x: auto;
 }
 
@@ -104,7 +104,7 @@ body {
 
 @media only screen and (max-width: 1000px) {
   #rectangle {
-    width: 50vw;
-    left: 25vw;
+    width: 90vw;
+    left: 5vw;
   }
 }
